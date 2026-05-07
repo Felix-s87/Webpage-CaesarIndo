@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesarindo Pratama Jaya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #E8C97A;
+            --gold-dark: #8B6914;
+            --black: #0A0A0A;
+            --black-soft: #111111;
+            --black-card: #161616;
+            --white: #FAFAF8;
+            --white-muted: #dfdcd7;
+            --white-soft: #e4decf;
+            --text-muted: #575553;
+            --shadow: #a19f9a3e;
+
+            --nav-height: 80px;
+            --border-radius: 0px;
+            --shadow-pos: -10px 10px
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #e7e4db;
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* =================================== SECTION BASE =================================== */
+        section { 
+            max-width: 1200px;
+            padding: 6rem 4rem;  
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .section-label {
+            font-size: 1rem; 
+            font-weight: 300;
+            color: var(--text-muted); 
+            line-height: 1.3;
+            letter-spacing: 0.2em; 
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-label-center {
+            font-size: 1rem; 
+            font-weight: 300;
+            color: var(--text-muted); 
+            line-height: 1.3;
+            letter-spacing: 0.2em; 
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600; line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title-center {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600; line-height: 1;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-sub {
+            font-size: 1rem; 
+            font-weight: 300;
+            color: var(--text-muted); 
+            line-height: 1.7;
+        }
+
+        .section-sub-center {
+            font-size: 1rem; 
+            font-weight: 300;
+            color: var(--text-muted); 
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 5px solid rgba(201,168,76,0.12);
+        }
+
+        /* =================================== NAVIGATION =================================== */
+        .nav {
+            height: var(--nav-height);
+            position: sticky; 
+            top: 0;
+            z-index: 100;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            padding: 1.25rem 4rem;
+            background: var(--black);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-logo {
+            display: flex; 
+            align-items: center; 
+            gap: 0.75rem;
+        }
+
+        .nav-logo img {
+            width: 50px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+
+        .nav-logo span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem; 
+            font-weight: 600;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex; gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.78rem; font-weight: 400;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--white);
+            transition: color 0.25s;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-contact {
+            padding: 0.5rem 1.4rem;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.75rem; font-weight: 500;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.25s, color 0.25s;
+            cursor: pointer; background: transparent;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .nav-contact:hover { 
+            color: var(--white);
+            background-color: var(--gold);
+        }
+
+
+        /* =================================== HERO =================================== */
+        .hero {
+            min-height: calc(100vh - var(--nav-height));
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* .hero-bg {
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 40%, var(--white) 0%, transparent 90%);
+            pointer-events: none;
+        } */
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.35rem 1rem;
+            border: 2px solid var(--gold);
+            font-size: 0.7rem; font-weight: 400;
+            letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-title {
+            width: 100%;
+            height: 12rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10rem;
+        }
+
+        .hero-title img {
+            width: 300px;
+            margin-top: 7rem;
+            filter: drop-shadow(-10px 10px 0px var(--shadow));
+        }
+
+        .hero-title h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 600; 
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            animation: fadeInUp 0.8s 0.15s ease both;
+        }
+
+        .hero-title h1 em { 
+            color: var(--black);
+        }
+
+        .hero-sub {
+            max-width: 520px; 
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s 0.3s ease both;
+        }
+
+        .hero-actions {
+            display: flex; gap: 1rem; justify-content: center;
+            animation: fadeInUp 0.8s 0.45s ease both;
+        }
+
+        .btn-primary {
+            padding: 0.85rem 2.2rem;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.78rem; 
+            font-weight: 600;
+            letter-spacing: 0.1em; 
+            text-transform: uppercase;
+            text-decoration: none; 
+            border: none; 
+            cursor: pointer;
+            transition: transform ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
+            font-family: 'Outfit', sans-serif;
+            box-shadow: 0 0 0 var(--shadow);
+        }
+
+        .btn-primary:hover { 
+            transform: translateY(-5px); 
+            box-shadow: -5px 5px 0 var(--shadow);
+        }
+
+        .btn-outline {
+            padding: 0.85rem 2.2rem;
+            background-color: transparent;
+            color: var(--gold-dark);
+            font-size: 0.78rem; font-weight: 400;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            text-decoration: none; 
+            border: 2px solid var(--gold); 
+            cursor: pointer;
+            transition: transform ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .btn-outline:hover { 
+            transform: translateY(-5px);
+            box-shadow: -5px 5px 0 var(--shadow);
+        }
+
+        .hero-stats {
+            display: flex; 
+            justify-content: center;
+            align-items: flex-end;
+            gap: 5rem;
+            animation: fadeInUp 0.8s 0.6s ease both;
+            margin-top: 5rem;
+        }
+
+        .stat-item { text-align: center; }
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem; font-weight: 600; color: var(--gold-dark);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.68rem; font-weight: 400;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--text-muted); margin-top: 0.35rem;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+
+        /* =================================== ABOUT =================================== */
+
+        .about-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem; 
+            align-items: center;
+        }
+
+        .span-title{
+            color: var(--gold-dark);
+            font-style: italic;
+            font-weight: 100;
+            font-size: 4rem;
+        }
+
+        .span-subtitle{
+            color: var(--gold-dark);
+            font-weight: 500;
+        }
+
+        .about-text p {
+            margin-bottom: 1.25rem;
+        }
+
+        .about-text p strong { 
+            /* color: var(--black-soft);  */
+            font-weight: 500; 
+        }
+
+        .about-cards {
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            width: 560px;
+            height: 430px;
+            background-color: var(--gold);
+            border: 2px solid var(--gold);
+            box-shadow: -10px 10px 0 var(--shadow);
+        }
+
+        .about-card {
+            overflow: hidden;
+        }
+
+        .about-card img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-cards .emblem {
+            filter: drop-shadow(-6px 6px 0.5px var(--shadow));
+        }
+
+        .about-cards .location {
+            box-shadow: var(--shadow-pos) 0px var(--shadow);
+        }
+
+        
+        /* =================================== PRODUCTS =================================== */
+        .products-section { 
+            padding: 6rem 0; 
+        }
+
+        .products-card p {
+            font-size: 1.1rem; 
+            font-weight: 300;
+            color: var(--white-muted); 
+            line-height: 1.3;
+            margin-bottom: 1.25rem;
+        }
+
+        .products-inner { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 4rem; 
+        }
+
+        .products-inner h2 {
+            color: var(--black);
+        }
+
+        .products-grid {
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px; 
+            margin-top: 3rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-pos) 0 var(--shadow);
+            border-radius: var(--border-radius);
+        }
+
+        .product-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            overflow: hidden;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform ease-in-out 0.1s;
+        }
+
+        .product-card img:hover { transform: scale(1.2); }
+
+        /* .product-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border: 2px solid var(--gold);
+            font-size: 0.65rem; font-weight: 500;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--gold);
+        } */
+
+        .product-card .line {
+            background-color: var(--gold-light);
+            height: 10px;
+            width: 0;
+            transform: translateY(26px);
+            transition: width ease-in-out 0.1s;
+        }
+
+        .product-card img:hover ~ .line {
+            width: 100%;
+        }
+
+
+        /* =================================== VISI & MISI =================================== */
+        .vm-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 3rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .vm-box {
+            border: 2px solid var(--gold-light);
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: var(--shadow-pos) 0 var(--shadow);
+            background-color: white;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+
+        .vm-box::before {
+            content: '';
+            position: absolute; top: 0px; left: 0px;
+            width: 6rem; height: 6px;
+            background: var(--gold-light);
+        }
+
+        .vm-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem; font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .vm-box p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .vm-box ul {
+            list-style: none; 
+            padding: 0;
+            margin-top: -0.75rem;
+        }
+
+        .vm-box li {
+            padding: 0.6rem 0;
+            display: flex; 
+            gap: 0.75rem;
+            text-align: justify;
+        }
+
+        .vm-box li::before {
+            content: '→'; 
+            color: var(--gold); 
+            font-size: 1.1rem;
+        }
+
+
+        /* =================================== MILESTONE =================================== */
+        .milestone {
+            padding-top: 10px;
+        }
+
+        .timeline {
+            position: relative; 
+            margin-top: 5rem;
+            margin-left: 14.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute; top: 0; bottom: 0; left: 0;
+            width: 1.5px; background: var(--gold);
+        }
+
+        .timeline-item {
+            position: relative;
+            top: -17px;
+            padding: 0 0 3rem 0rem;
+            color: var(--gold);
+        }
+
+        .timeline-item img {
+            position: absolute;
+            top: -3rem;
+            left: -16.5rem;
+            width: 200px;
+            border: 2px solid var(--gold);
+            box-shadow: -10px 10px 0 var(--shadow);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute; left: -2.6rem; top: 17px;
+            width: 20px; height: 20px;
+            background-color: var(--gold); 
+            border-radius: 50%;
+        }
+
+        .timeline-item-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem; 
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+        
+
+        /* =================================== LOCATION =================================== */
+        .locations-grid {
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem; 
+            margin-top: 3rem;
+        }
+
+        .location-card {
+            background: var(--white );
+            border: 2px solid var(--gold);
+            padding: 1.75rem;
+            transition: transform ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
+        }
+
+        .location-card:hover { 
+            transform: translateY(-7px);
+            box-shadow: -10px 10px 0 var(--shadow);
+        }
+
+        .location-type {
+            font-size: 0.65rem; font-weight: 600;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--gold-dark); margin-bottom: 0.6rem;
+        }
+
+        .location-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem; font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .location-addr {
+            font-size: 0.8rem; font-weight: 300;
+            color: var(--text-muted); line-height: 1.6;
+        }
+
+
+        /* =================================== CTA =================================== */
+        .cta-section {
+            text-align: center; 
+            padding: 8rem 4rem;
+            max-width: 1200px; 
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600; 
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1rem; 
+            font-weight: 300;
+            color: var(--text-muted); 
+            margin-bottom: 2.5rem;
+            max-width: 480px; margin-left: auto; 
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+
+        /* =================================== FOOTER =================================== */
+        footer {
+            padding: 2.5rem 4rem;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1rem; font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        .brand {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold-dark);
+        }
+
+        .creator {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-muted);
+            font-weight: 300;
+            font-size: 0.75rem;
+        }
+
+        .footer-divider {
+            width: 2px;
+            height: 40px;
+            background-color: var(--gold);
+        }
+
+        .footer-socials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px 1rem;
+            width: 100px;
+            height: 50px;
+        }
+
+        .social {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0 0.4rem;
+            cursor: pointer;
+        }
+
+        .social img {
+            width: 20px;
+            flex-shrink: 0;
+        }
+
+        .social p {
+            color: var(--text-muted);
+            font-weight: 300;
+            white-space: nowrap;
+        }
+
+        .footer-note {
+            font-size: 1rem; 
+            font-weight: 300;
+            color: var(--text-muted);
+        }
+
+
+        /* =================================== SETTING ENTAH APA INI =================================== */
+        .full-bg {
+            background-color: var(--white-soft);
+        }
+        
+        a {
+            text-decoration: none;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <div class="nav">
+        <a href="#hero" class="nav-logo">
+                <img src="./Assets/emblem phone.png" alt="Caesar Emblem logo">
+                <span>Caesarindo</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#visi">Visi & Misi</a></li>
+            <li><a href="#milestone">Milestone</a></li>
+            <li><a href="#lokasi">Lokasi</a></li>
+        </ul>
+        <a href="#kontak" class="nav-contact">Hubungi Kami</a>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-badge"><strong>DISTRIBUTOR SMARTPHONE DAN SEPEDA LISTRIK</strong></div>
+        <div class="hero-title">
+            <img src="./Assets/emblem phone.png">
+            <h1>CAESARINDO<br>PRATAMA JAYA</h1>
+            <img src="./Assets/emblem motor.png">
+        </div>
+        <p class="hero-sub section-sub">Perusahaan distribusi dan ritel perangkat komunikasi, elektronik, serta kendaraan ramah lingkungan terpercaya di wilayah Banten dan Jabodetabek.</p>
+        <div class="hero-actions">
+            <a href="#produk" class="btn-primary"><strong>Lihat Produk ➝</strong></a>
+            <a href="#tentang" class="btn-outline"><strong>Tentang Kami</strong></a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-num">23+</div>
+                <div class="stat-label">Tahun Pengalaman</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">20+</div>
+                <div class="stat-label">Toko & Outlet</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">100.000+</div>
+                <div class="stat-label">Total Produk Terjual</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">18+</div>
+                <div class="stat-label">Mitra Brand Terkemuka</div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- TENTANG -->
+    <section class="tentang" id="tentang">
+        <div class="about-grid">
+            <div class="about-text">
+                <div class="section-label">Tentang Kami</div>
+                <h2 class="section-title">Solusi Elektronik <br>Terpercaya Sejak <span class="span-title">2002</span></h2>
+                <p class="section-sub">
+                    <span class="span-subtitle">CaesarIndo</span> adalah <strong>perusahaan swasta lokal</strong> yang bergerak di sektor <strong>perangkat komunikasi</strong> dan <strong>produk elektronik</strong>, melayani <strong>perdagangan eceran</strong> maupun <strong>grosir</strong>.
+                </p>
+                <p class="section-sub">
+                    <span class="span-subtitle">Ruang lingkup usaha</span>  meliputi penjualan <strong>smart TV, iPhone, IP camera, notebook (laptop), MacBook, iPad, hingga kendaraan ramah lingkungan</strong> seperti <strong>sepeda listrik</strong> dan <strong>motor listrik</strong>.
+                </p>
+                <p class="section-sub">
+                    <span class="span-subtitle">Berdiri sejak tahun 2002</span>, CaesarIndo terus berkembang untuk memenuhi kebutuhan masyarakat Indonesia, terutama di <strong>wilayah Banten dan sekitarnya</strong>.
+                </p>
+            </div>
+            <div class="about-cards">
+                <div class="about-card">
+                    <img src="./Assets/phone-about.png">
+                </div>
+                <div class="about-card">
+                    <img src="./Assets/uwinfly-about.webp">
+                </div>
+                <div class="about-card">
+                    <img src="./Assets/tv-about.webp">
+                </div>
+                <div class="about-card">
+                    <img src="./Assets/laptop-about.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- PRODUK -->
+    <div class="products-section full-bg" id="produk">
+        <div class="products-inner">
+            <div class="section-label-center">Produk</div>
+            <h2 class="section-title-center">Mitra Kerjasama</h2>
+            <p class="section-sub-center">Kami menghadirkan berbagai produk dari brand-brand terkemuka <br>untuk memenuhi kebutuhan eletkronik anda.</p>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="./Assets/samsung-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/apple-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/xiaomi-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/itel-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/infinix-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/honor-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/tecno-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/oppo-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/vivo-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/advan-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/nokia-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/motorola-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/nubia-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/realme-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/imou-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/goda-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/uwinfly-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/exotic-bike-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/ofero-logo.png">
+                    <div class="line"></div>
+                </div>
+                <div class="product-card">
+                    <img src="./Assets/nuv-logo.png">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- VISI MISI -->
+    <section class="section-flex-row" id="visi">
+        <p class="section-label">Visi & Misi</p>
+        <h2 class="section-title">Nilai Perusahaan</h2>
+        <div class="vm-grid">
+            <div class="vm-box">
+                <h3>Visi</h3>
+                <p class="section-sub">
+                    Menjadi perusahaan distribusi yang tidak hanya berfokus pada pertumbuhan bisnis semata, 
+                    tetapi juga berkembang bersama seluruh anggota tim dan mitra layaknya satu keluarga besar yang saling mendukung. 
+                </p>
+                <p class="section-sub">
+                    Kami berkomitmen untuk membangun hubungan yang hangat, penuh kepercayaan, dan berkelanjutan, 
+                    sehingga tercipta kerja sama jangka panjang yang harmonis, saling menguntungkan, 
+                    serta mampu menghadapi berbagai tantangan bersama di masa depan.
+                </p>
+            </div>
+            <div class="vm-box">
+                <h3>Misi</h3>
+                <ul>
+                    <li class="section-sub">Membangun budaya kerja kekeluargaan yang mendorong kebersamaan, saling menghargai, dan kepedulian antar anggota tim.</li>
+                    <li class="section-sub">Menyediakan layanan distribusi yang andal dan berintegritas untuk menciptakan nilai bersama bagi pelanggan, mitra, dan perusahaan.</li>
+                    <li class="section-sub">Menjalin relasi jangka panjang yang baik untuk semua pihak dalam mendukung pertumbuhan ekonomi bersama.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- MILESTONE -->
+    <div class="full-bg milestone" id="milestone">
+        <section class="timeline-section" style="background:transparent">
+            <p class="section-label">Milestone</p>
+            <h2 class="section-title">Perjalanan Kami</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <img src="./Assets/caesar-phone-1.png" alt="">
+                    <div class="timeline-item-title">2002</div>
+                    <div class="section-sub">Toko <strong>Retail pertama</strong> di <strong>Tangerang</strong></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-title">2005 – 2006</div>
+                    <div class="section-sub">
+                        <ul>
+                            <li>Toko <strong>Retail Ke-dua</strong> di <strong>Balaraja</strong></li>
+                            <li>Toko <strong>Retail Ke-tiga</strong> di <strong>Bandung</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <img src="./Assets/caesar phone.png" alt="">
+                    <div class="timeline-item-title">2009</div>
+                    <div class="section-sub">Toko <strong>Retail Ke-empat</strong> dan <strong>Distribution Center</strong> di <strong>Tangerang</strong></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-title">2012 – 2014</div>
+                    <div class="section-sub">
+                        <ul>
+                            <li>Toko <strong>Retail Ke-lima</strong> di <strong>Cikupa</strong></li>
+                            <li>Onward <strong>penambahan 5 Retail</strong> Handphone tersebar di <strong>Tangerang</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <img src="./Assets/caesar-motor.jpg" alt="">
+                    <div class="timeline-item-title">2023</div>
+                    <div class="section-sub">
+                       <ul>
+                            <li>
+                                <strong>Ekspansi</strong> bidang <strong>Sepeda Listrik</strong> dengan
+                                pembukaan 6 toko sepeda listrik dan motor
+                                listrik di <strong>Jakarta, Bekasi, Depok, dan 3 toko di
+                                Tangerang</strong> yang melayani <strong>Eceran</strong> dan <strong>Grosir</strong>
+                            </li>
+                            <li>
+                                <strong>Distributor Top 3</strong> Sepeda Listrik <strong>UwinFly</strong>
+                                area seluruh <strong>Jabodetabek</strong> dan <strong>Banten</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-title">2024</div>
+                    <div class="section-sub">
+                        <ul>
+                            <li>
+                                <strong>Penambahan 10 Toko</strong> Sepeda Listrik dan
+                                Motor Listrik di area <strong>Jabodetabek</strong>
+                            </li>
+                            <li>
+                                <strong>Distributor Tunggal</strong> Sepeda Listrik <strong>Goda</strong>
+                                area <strong>Tangerang</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-title">More Project TBA</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- LOKASI -->
+    <section id="lokasi">
+        <p class="section-label-center">Lokasi</p>
+        <h2 class="section-title-center">Jaringan Kami</h2>
+        <p class="section-sub-center">+ 20 toko tersebar di Jakarta, Bekasi, Depok, Bandung, dan seluruh wilayah Tangerang.</p>
+        <div class="locations-grid">
+            <a href="https://maps.app.goo.gl/4Wb4x41EPzUe8Kwx5" target="_blank" class="location-card">
+                <div class="location-type">Caesar Phone</div>
+                <div class="location-name">Tangcity Mall</div>
+                <div class="location-addr">Lantai LG Blok A2/A8, Babakan, Kec. Tangerang, Kota Tangerang, Banten 15117</div>
+            </a>
+            <a href="" class="location-card">
+                <div class="location-type">Advan Store</div>
+                <div class="location-name">Kutabumi</div>
+                <div class="location-addr">Ruko Pondok Rejeki, Jl. Raya Kutabumi No.15 Blok CR 4, Kec. Ps. Kemis, Kab. Tangerang, Banten 15560</div>
+            </a>
+            <a href="" class="location-card">
+                <div class="location-type">Caesar Motor</div>
+                <div class="location-name">Tangerang</div>
+                <div class="location-addr">Tangcity Mall, Lantai LG Blok A2/A8, Babakan, Kec. Tangerang, Kota Tangerang, Banten 15117</div>
+            </a>
+            <a href="" class="location-card">
+                <div class="location-type">UwinFly Center</div>
+                <div class="location-name">Pasar Baru</div>
+                <div class="location-addr">Nambo Jaya, Karawaci, Tangerang City, Banten 15113</div>
+            </a>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CTA -->
+    <div class="full-bg">
+        <div class="cta-section" id="kontak">
+            <h2>Siap Bermitra<br>Bersama Kami?</h2>
+            <p>Kami melayani pembelian eceran maupun grosir. Hubungi tim kami untuk informasi lebih lanjut seputar produk dan kerjasama distribusi.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+                <a href="#" class="btn-primary">Hubungi Kami</a>
+                <a href="#lokasi" class="btn-outline">Lihat Lokasi</a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">
+            <div class="brand">
+                CAESARINDO PRATAMA JAYA
+                <br><span class="creator">Created By Flx</span>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-socials">
+                <a class="social">
+                    <img src="./Assets/tiktok-logo.webp" alt="">
+                    <p>TikTok</p>
+                </a>
+                <a class="social">
+                    <img src="./Assets/whatsapp-logo.png" alt="">
+                    <p>Whatsapp (Caesar Phone)</p>
+                </a>
+                <a class="social">
+                    <img src="./Assets/instagram-logo.png" alt="">
+                    <p>Instagram</p>
+                </a>
+                <a class="social">
+                    <img src="./Assets/whatsapp-logo.png" alt="">
+                    <p>Whatsapp (Caesar Motor)</p>
+                </a>
+            </div>
+        </div>
+        <div class="footer-note">©2026 Caesarindo Pratama Jaya. Hak Cipta Dilindungi.</div>
+
+    </footer>
+</body>
+</html>
